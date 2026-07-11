@@ -14,11 +14,8 @@
 
 The midterm exam covers all material from **Weeks 1 through 8** of the course. It consists of two components:
 
-| Component | Points |
-|-----------|--------|
-| **Part A — Written Knowledge Assessment** | 100 points |
-| **Part B — Practical Hands-On Demonstration** | 100 points |
-| **Total** | **200 points** |
+- **Part A — Written Knowledge Assessment**
+- **Part B — Practical Hands-On Demonstration**
 
 > **⚠️ Academic Integrity:** This is an individual exam. You may reference course materials, notes, and publicly available documentation. You may NOT collaborate with other students or use AI tools to generate any portion of your answers. Violations will result in a zero and may be referred for academic misconduct review.
 
@@ -39,16 +36,16 @@ The midterm exam covers all material from **Weeks 1 through 8** of the course. I
 
 ---
 
-## ✍️ Part A — Written Knowledge Assessment (100 points)
+## ✍️ Part A — Written Knowledge Assessment
 
 Submit your answers in a Word document (`.docx`) named `midterm-partA-<yourname>.docx`.  
 **APA format, double-spaced, minimum length noted per question.**
 
 ---
 
-### Section 1 — Supply Chain Security (30 points)
+### Section 1 — Supply Chain Security
 
-**Question 1 (15 points):**
+**Question 1:**
 
 Write a detailed essay (minimum 1.5 pages) responding to the following:
 
@@ -60,9 +57,9 @@ Your response must include:
 - At least two technical controls from this course that apply
 - Your personal assessment of the biggest challenge in defending the supply chain
 
-**Question 2 (15 points):**
+**Question 2:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **2a.** What is a Software Bill of Materials (SBOM)? Explain its purpose and why CISA and the U.S. Federal Government have made SBOM a priority in recent years.
 
@@ -72,9 +69,9 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-### Section 2 — Linux Security (30 points)
+### Section 2 — Linux Security
 
-**Question 3 (15 points):**
+**Question 3:**
 
 Write a step-by-step hardening guide (minimum 1 page) for a freshly installed Ubuntu 22.04 LTS server. Your guide must cover at least **six** of the following areas:
 
@@ -92,9 +89,9 @@ For each area, provide:
 2. The Linux command(s) to implement it
 3. Why this action improves security
 
-**Question 4 (15 points):**
+**Question 4:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **4a.** Explain the Linux permission model. What do the read (r), write (w), and execute (x) bits mean for files vs. directories? What is the risk of a world-writable directory?
 
@@ -104,9 +101,9 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-### Section 3 — Docker Container Security (40 points)
+### Section 3 — Docker Container Security
 
-**Question 5 (20 points):**
+**Question 5:**
 
 You are given the following Dockerfile:
 
@@ -129,7 +126,7 @@ Write a **detailed security analysis** (minimum 1.5 pages) that:
 3. Provides the corrected/hardened version of the Dockerfile with inline comments explaining each change
 4. Explains the concept of "minimal attack surface" in the context of container security
 
-**Question 6 (20 points):**
+**Question 6:**
 
 Write a mini-essay (minimum 1 page) responding to:
 
@@ -137,30 +134,30 @@ Write a mini-essay (minimum 1 page) responding to:
 
 ---
 
-## 🖥️ Part B — Practical Hands-On Demonstration (100 points)
+## 🖥️ Part B — Practical Hands-On Demonstration
 
 Submit a **screen-recording video** (`.wmv` format) and any supporting files listed below.
 
 ---
 
-### Practical Task 1 — Linux Hardening Demonstration (35 points)
+### Practical Task 1 — Linux Hardening Demonstration
 
 On your Ubuntu Linux VM, perform and record the following:
 
-**Task 1a (10 points):** User & Service Hardening
+**Task 1a:** User & Service Hardening
 - Create a user named `midterm-user` with no sudo access
 - Lock the account for a user named `unused-svc` (create it first if needed)
 - List all running services
 - Identify and disable one unnecessary service
 - Show the service is now inactive
 
-**Task 1b (10 points):** File Permissions & SUID Audit
+**Task 1b:** File Permissions & SUID Audit
 - Create a directory `~/midterm-secure/` and a file `secret-data.txt` inside it
 - Set permissions so only the owner can read/write the file (`chmod 600`)
 - Run the command to find all SUID binaries on the system
 - Save the output to `suid-audit.txt`
 
-**Task 1c (15 points):** Run Lynis and Review Results
+**Task 1c:** Run Lynis and Review Results
 - Run a full Lynis audit: `sudo lynis audit system`
 - Save the report to `midterm-lynis.txt`
 - In a separate file `midterm-lynis-review.txt`, summarize:
@@ -172,9 +169,9 @@ On your Ubuntu Linux VM, perform and record the following:
 
 ---
 
-### Practical Task 2 — Docker Security Demonstration (35 points)
+### Practical Task 2 — Docker Security Demonstration
 
-**Task 2a (15 points):** Build a Hardened Container
+**Task 2a:** Build a Hardened Container
 - Create a directory `~/midterm-docker/`
 - Write a hardened `Dockerfile` using:
   - A pinned base image (with digest)
@@ -185,7 +182,7 @@ On your Ubuntu Linux VM, perform and record the following:
 - Build the image: `docker build -t midterm-secure:v1 .`
 - Run it and confirm it runs as a non-root user (`docker exec <container> whoami`)
 
-**Task 2b (10 points):** Generate SBOM
+**Task 2b:** Generate SBOM
 - Use Syft to generate an SBOM for your image:
   ```bash
   syft midterm-secure:v1 -o table
@@ -193,7 +190,7 @@ On your Ubuntu Linux VM, perform and record the following:
   ```
 - Narrate in your video: how many packages are in the SBOM and what it tells you
 
-**Task 2c (10 points):** Vulnerability Scan
+**Task 2c:** Vulnerability Scan
 - Use Grype to scan your image:
   ```bash
   grype midterm-secure:v1 2>&1 | tee midterm-vuln-scan.txt
@@ -202,9 +199,9 @@ On your Ubuntu Linux VM, perform and record the following:
 
 ---
 
-### Practical Task 3 — GitHub CI/CD Security Gate (30 points)
+### Practical Task 3 — GitHub CI/CD Security Gate
 
-**Task 3a (15 points):** Create a GitHub repository named `ia462-midterm-pipeline` with:
+**Task 3a:** Create a GitHub repository named `ia462-midterm-pipeline` with:
 - A simple application `Dockerfile`
 - A `requirements.txt` with pinned dependencies
 - A GitHub Actions workflow (`.github/workflows/midterm-security.yml`) that:
@@ -213,7 +210,7 @@ On your Ubuntu Linux VM, perform and record the following:
   - Fails the pipeline on CRITICAL findings
   - Generates an SBOM as a pipeline artifact
 
-**Task 3b (15 points):** Demonstrate the pipeline in action:
+**Task 3b:** Demonstrate the pipeline in action:
 - Push code and show the pipeline running in GitHub Actions
 - Show the pipeline passing (no critical findings) or explain the finding
 - Download and show the SBOM artifact
@@ -237,35 +234,6 @@ Submit the following via Google Drive share link (see syllabus for submission em
 | `midterm-vuln-scan.txt` | Plain text | ✅ Yes |
 | GitHub repository URL (in submission comment) | URL | ✅ Yes |
 | Screenshots | `.png` or `.jpg` | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-### Part A — Written (100 points)
-
-| Question | Points |
-|----------|--------|
-| Q1 — Supply chain attack essay | 15 |
-| Q2a/b/c — Short answers | 15 |
-| Q3 — Linux hardening guide | 15 |
-| Q4a/b/c — Short answers | 15 |
-| Q5 — Dockerfile security analysis | 20 |
-| Q6 — Container security strategy essay | 20 |
-| **Total Part A** | **100** |
-
-### Part B — Practical (100 points)
-
-| Task | Points |
-|------|--------|
-| Task 1a — User & service hardening | 10 |
-| Task 1b — File permissions & SUID audit | 10 |
-| Task 1c — Lynis audit and review | 15 |
-| Task 2a — Hardened Dockerfile | 15 |
-| Task 2b — SBOM generation | 10 |
-| Task 2c — Vulnerability scan | 10 |
-| Task 3a/b — GitHub Actions CI/CD pipeline | 30 |
-| **Total Part B** | **100** |
 
 ---
 

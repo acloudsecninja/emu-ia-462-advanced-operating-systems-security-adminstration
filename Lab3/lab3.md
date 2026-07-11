@@ -52,7 +52,7 @@ docker run hello-world
 
 ## 📝 Lab Instructions
 
-### Part 1 — Build a Secure Dockerfile (20 points)
+### Part 1 — Build a Secure Dockerfile
 
 #### 1a — Create an Insecure Dockerfile (Baseline)
 
@@ -150,7 +150,7 @@ In `lab3-findings.txt`, document:
 
 ---
 
-### Part 2 — Run & Verify the Container (10 points)
+### Part 2 — Run & Verify the Container
 
 Run the container:
 ```bash
@@ -179,7 +179,7 @@ docker rm lab3-container
 
 ---
 
-### Part 3 — Generate a Software Bill of Materials (SBOM) (20 points)
+### Part 3 — Generate a Software Bill of Materials (SBOM)
 
 A Software Bill of Materials (SBOM) is an inventory of all components and dependencies in a software artifact.
 
@@ -213,7 +213,7 @@ In `lab3-findings.txt`, answer:
 
 ---
 
-### Part 4 — Vulnerability Scanning with Grype (15 points)
+### Part 4 — Vulnerability Scanning with Grype
 
 #### 4a — Install Grype
 
@@ -242,7 +242,7 @@ In `lab3-findings.txt`, document:
 
 ---
 
-### Part 5 — Video Walkthrough (included in points above)
+### Part 5 — Video Walkthrough
 
 Record a video demonstrating:
 
@@ -266,19 +266,6 @@ Record a video demonstrating:
 | `lab3-sbom.json` | JSON | ✅ Yes |
 | `lab3-vuln-scan.txt` | Plain text | ✅ Yes |
 | `lab3-findings.txt` | Plain text | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-| Section | Points |
-|---------|--------|
-| Secure Dockerfile built & hardening decisions documented | 20 |
-| Container runs as non-root user (verified) | 10 |
-| SBOM generated and reviewed | 20 |
-| Vulnerability scan completed and reviewed | 15 |
-| Video walkthrough | 10 |
-| **Total** | **75** |
 
 ---
 

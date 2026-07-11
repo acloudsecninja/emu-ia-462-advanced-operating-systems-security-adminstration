@@ -33,7 +33,7 @@ To start your VM:
 
 ## 📝 Lab Instructions
 
-### Part 1 — User & Group Management (15 points)
+### Part 1 — User & Group Management
 
 #### 1a — Audit Existing Users
 
@@ -91,7 +91,7 @@ sudo passwd -S <username>
 
 ---
 
-### Part 2 — File Permissions & Principle of Least Privilege (15 points)
+### Part 2 — File Permissions & Principle of Least Privilege
 
 #### 2a — Understanding Permissions
 
@@ -136,7 +136,7 @@ sudo find / -xdev -perm /4000 2>/dev/null
 
 ---
 
-### Part 3 — Service Hardening (Reduce Attack Surface) (15 points)
+### Part 3 — Service Hardening (Reduce Attack Surface)
 
 #### 3a — List Running Services
 
@@ -165,7 +165,7 @@ sudo systemctl status <service-name>
 
 ---
 
-### Part 4 — SSH Hardening (15 points)
+### Part 4 — SSH Hardening
 
 #### 4a — Review the SSH Configuration
 
@@ -211,7 +211,7 @@ sudo systemctl status sshd
 
 ---
 
-### Part 5 — Basic Security Audit with Lynis (15 points)
+### Part 5 — Basic Security Audit with Lynis
 
 Lynis is an open-source security auditing tool for Linux.
 
@@ -246,7 +246,7 @@ sudo lynis audit system 2>&1 | tee ~/lab2-lynis-report.txt
 
 ---
 
-### Part 6 — Video Walkthrough (included in points above)
+### Part 6 — Video Walkthrough
 
 Using your screen recording software, record a video demonstrating:
 
@@ -268,19 +268,6 @@ Using your screen recording software, record a video demonstrating:
 | Video walkthrough | `.wmv` | ✅ Yes |
 | `lab2-lynis-report.txt` | Plain text | ✅ Yes |
 | Screenshots (within a `lab2-screenshots/` folder or embedded) | `.png` or `.jpg` | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-| Section | Points |
-|---------|--------|
-| User & group management (screenshots + explanation) | 15 |
-| File permissions applied correctly | 15 |
-| Service hardening demonstrated | 15 |
-| SSH hardening configuration shown | 15 |
-| Lynis audit completed, report submitted | 15 |
-| **Total** | **75** |
 
 ---
 

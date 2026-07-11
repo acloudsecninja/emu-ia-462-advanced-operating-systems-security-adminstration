@@ -48,7 +48,7 @@ git --version
 
 ## 📝 Lab Instructions
 
-### Part 1 — Create a GitHub Account (10 points)
+### Part 1 — Create a GitHub Account
 
 1. Navigate to https://github.com
 2. Click **Sign Up** and register using your **EMU email address** (`@emich.edu`)
@@ -56,7 +56,7 @@ git --version
 4. Verify your email address
 5. **Screenshot:** Take a screenshot of your GitHub profile page showing your username
 
-### Part 2 — Configure Git Locally (10 points)
+### Part 2 — Configure Git Locally
 
 Open a terminal (Git Bash on Windows, Terminal on Linux/macOS) and configure your identity:
 
@@ -73,7 +73,7 @@ git config --list
 
 **Screenshot:** Take a screenshot of the `git config --list` output.
 
-### Part 3 — Clone the Course Repository (15 points)
+### Part 3 — Clone the Course Repository
 
 1. Navigate to the course GitHub organization (link provided in Canvas)
 2. Find the course lab repository
@@ -90,7 +90,7 @@ git config --list
 
 **Screenshot:** Take a screenshot showing the successful clone and directory listing.
 
-### Part 4 — Explore the Repository Structure (10 points)
+### Part 4 — Explore the Repository Structure
 
 1. Review the repository structure — identify the Lab folders, README files, and any configuration files
 2. Open the `README.md` at the root of the repository and read through it
@@ -101,7 +101,7 @@ git config --list
 
 **Screenshot:** Take a screenshot of the `git log` output.
 
-### Part 5 — Supply Chain Security Awareness (15 points)
+### Part 5 — Supply Chain Security Awareness
 
 Answer the following questions in a text file named `lab1-answers.txt` that you will submit along with your video:
 
@@ -110,7 +110,7 @@ Answer the following questions in a text file named `lab1-answers.txt` that you 
 3. **Why is source control (like GitHub) important** in defending against supply chain attacks?
 4. **What is dependency pinning?** Why is it considered a supply chain security best practice?
 
-### Part 6 — Record Your Video Walkthrough (15 points)
+### Part 6 — Record Your Video Walkthrough
 
 Using your screen recording software, record a video demonstrating:
 
@@ -133,20 +133,6 @@ Submit the following to Canvas by the due date:
 | Video walkthrough | `.wmv` | ✅ Yes |
 | `lab1-answers.txt` | Plain text | ✅ Yes |
 | Screenshots (embedded in answers or separate) | `.png` or `.jpg` | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-| Section | Points |
-|---------|--------|
-| GitHub account created and configured | 10 |
-| Git configured locally (correct output shown) | 10 |
-| Repository successfully cloned | 15 |
-| Repository structure explored and log shown | 10 |
-| Supply chain security questions answered | 15 |
-| Video walkthrough recorded and submitted | 15 |
-| **Total** | **75** |
 
 ---
 

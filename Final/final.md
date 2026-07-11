@@ -14,12 +14,9 @@
 
 The Final Exam covers all material from the **entire course (Weeks 1–16)** and builds upon your Midterm work. It is the capstone assessment for the course and consists of three components:
 
-| Component | Points |
-|-----------|--------|
-| **Part A — Written Final Exam** | 100 points |
-| **Part B — GitHub Docker / Open-Source Security Project** | 100 points |
-| **Part C — Comprehensive Video Demonstration** | 100 points |
-| **Total** | **300 points** |
+- **Part A — Written Final Exam**
+- **Part B — GitHub Docker / Open-Source Security Project**
+- **Part C — Comprehensive Video Demonstration**
 
 > **⚠️ Academic Integrity:** This is an individual exam and project. You may reference course materials, notes, and public documentation. You may NOT collaborate with other students or use AI tools to generate any portion of your answers. Violations will result in a zero and may be referred for academic misconduct review.
 
@@ -42,16 +39,16 @@ All Midterm topics, plus:
 
 ---
 
-## ✍️ Part A — Written Final Exam (100 points)
+## ✍️ Part A — Written Final Exam
 
 Submit your answers in a Word document (`.docx`) named `final-partA-<yourname>.docx`.  
 **APA format, double-spaced, minimum length noted per question.**
 
 ---
 
-### Section 1 — Advanced Supply Chain Security (25 points)
+### Section 1 — Advanced Supply Chain Security
 
-**Question 1 (15 points):**
+**Question 1:**
 
 Write a comprehensive essay (minimum 2 pages) responding to:
 
@@ -63,9 +60,9 @@ Your response must include:
 - A tiered approach (what to do now vs. in 6 months vs. in a year)
 - How SBOM fits into the overall strategy
 
-**Question 2 (10 points):**
+**Question 2:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **2a.** What is image signing (e.g., Cosign/Sigstore), and how does it improve supply chain security for container images? Walk through the basic signing and verification flow.
 
@@ -73,9 +70,9 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-### Section 2 — End-to-End OS Security (25 points)
+### Section 2 — End-to-End OS Security
 
-**Question 3 (15 points):**
+**Question 3:**
 
 You have been given access to a production Linux server that has never been hardened. Write a **comprehensive hardening runbook** (minimum 2 pages) that a junior engineer could follow. Your runbook must cover:
 
@@ -92,9 +89,9 @@ You have been given access to a production Linux server that has never been hard
 
 For each section, include the commands, expected output, and success criteria.
 
-**Question 4 (10 points):**
+**Question 4:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **4a.** What is a CIS Benchmark? Choose one benchmark (Linux, Docker, or Windows) and describe 5 specific controls it recommends, including why each matters.
 
@@ -102,17 +99,17 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-### Section 3 — Docker & Container Security Mastery (25 points)
+### Section 3 — Docker & Container Security Mastery
 
-**Question 5 (15 points):**
+**Question 5:**
 
 Write a comprehensive essay (minimum 1.5 pages) on:
 
 > *"Advanced Docker container hardening goes beyond just running as a non-root user. Discuss the following advanced container security controls, explain what they protect against, and provide the Dockerfile or Docker run command syntax for each: read-only root filesystem, dropped Linux capabilities, seccomp profiles, and resource limits (CPU/memory). How do these controls align with the principle of least privilege?"*
 
-**Question 6 (10 points):**
+**Question 6:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **6a.** What is the difference between an image vulnerability scanner (scanning a built image) and a Dockerfile linter (e.g., Hadolint)? Why are both valuable in a CI/CD pipeline?
 
@@ -120,9 +117,9 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-### Section 4 — CI/CD Security Pipeline Mastery (25 points)
+### Section 4 — CI/CD Security Pipeline Mastery
 
-**Question 7 (15 points):**
+**Question 7:**
 
 Design a complete GitHub Actions CI/CD security pipeline for a containerized Python application. Your answer must include:
 
@@ -132,9 +129,9 @@ Design a complete GitHub Actions CI/CD security pipeline for a containerized Pyt
 - Artifact management strategy
 - An explanation of how this pipeline implements "shift-left security"
 
-**Question 8 (10 points):**
+**Question 8:**
 
-Answer the following short-answer questions (5 points each):
+Answer the following short-answer questions:
 
 **8a.** What is "shift-left security" and how does integrating security into CI/CD pipelines embody this concept?
 
@@ -142,7 +139,7 @@ Answer the following short-answer questions (5 points each):
 
 ---
 
-## 🖥️ Part B — GitHub Docker / Open-Source Security Project (100 points)
+## 🖥️ Part B — GitHub Docker / Open-Source Security Project
 
 This is the major hands-on deliverable for the course. You will build, harden, and secure a containerized application from scratch and publish it to GitHub.
 
@@ -150,7 +147,7 @@ This is the major hands-on deliverable for the course. You will build, harden, a
 
 ### Project Requirements
 
-#### Repository Setup (10 points)
+#### Repository Setup
 
 Create a **public** GitHub repository named `ia462-final-project`. Your repository must contain:
 
@@ -176,7 +173,7 @@ Your `README.md` must include:
 - Pipeline overview
 - How to verify the SBOM
 
-#### Application & Dockerfile (20 points)
+#### Application & Dockerfile
 
 Build a containerized application (Python Flask, Node.js, or similar) with a hardened Dockerfile that demonstrates:
 
@@ -191,28 +188,26 @@ Build a containerized application (Python Flask, Node.js, or similar) with a har
 - [ ] Read-only filesystem (`--read-only` in docker run, or documented)
 - [ ] Dropped capabilities where applicable (documented)
 
-#### CI/CD Security Pipeline (40 points)
+#### CI/CD Security Pipeline
 
 Your GitHub Actions pipeline must include all of the following jobs:
 
-| Job | Tool | Points |
-|-----|------|--------|
-| Build Docker image | `docker build` | 5 |
-| SBOM generation | Syft (SPDX JSON format) | 10 |
-| Container vulnerability scan with security gate | Trivy (fail on CRITICAL) | 10 |
-| Dependency audit | pip-audit or npm audit | 5 |
-| Dockerfile linting | Hadolint | 5 |
-| SBOM artifact upload | GitHub Actions artifact | 5 |
+- Build Docker image (`docker build`)
+- SBOM generation (Syft, SPDX JSON format)
+- Container vulnerability scan with security gate (Trivy, fail on CRITICAL)
+- Dependency audit (pip-audit or npm audit)
+- Dockerfile linting (Hadolint)
+- SBOM artifact upload (GitHub Actions artifact)
 
-#### Security Documentation (30 points)
+#### Security Documentation
 
 Create `SECURITY.md` in the repository that documents:
 
-1. **Threat Model (10 points):** What are the top 5 threats to your application, and how does your security implementation mitigate each?
+1. **Threat Model:** What are the top 5 threats to your application, and how does your security implementation mitigate each?
 
-2. **SBOM Review (10 points):** A summary of your SBOM findings — total packages, any concerning dependencies, and your assessment.
+2. **SBOM Review:** A summary of your SBOM findings — total packages, any concerning dependencies, and your assessment.
 
-3. **Vulnerability Scan Review (10 points):** Summary of vulnerability scan results — total findings, severity breakdown, CVEs you identified and how you remediated or accepted them.
+3. **Vulnerability Scan Review:** Summary of vulnerability scan results — total findings, severity breakdown, CVEs you identified and how you remediated or accepted them.
 
 ---
 
@@ -227,51 +222,51 @@ Create `SECURITY.md` in the repository that documents:
 
 ---
 
-## 🎥 Part C — Comprehensive Video Demonstration (100 points)
+## 🎥 Part C — Comprehensive Video Demonstration
 
 Record a **comprehensive video demonstration** (`.wmv` format) that walks through your entire final project and demonstrates mastery of course concepts.
 
 ---
 
-### Video Section 1 — Linux Security Mastery (25 points)
+### Video Section 1 — Linux Security Mastery
 
 Demonstrate on your Ubuntu VM:
 
-1. **(5 pts)** Complete user audit — show all users, identify any with UID 0, lock an unused account
-2. **(5 pts)** Run a full Lynis audit and narrate your Hardening Index, top 3 warnings, and 5 remediation steps you would take
-3. **(5 pts)** Demonstrate SSH hardening — show your `sshd_config` and explain each key setting
-4. **(5 pts)** SUID/SGID audit — show the command, output, and explain which binaries concern you and why
-5. **(5 pts)** Verbal explanation: What is the single most impactful Linux hardening step for reducing supply chain risk, and why?
+1. Complete user audit — show all users, identify any with UID 0, lock an unused account
+2. Run a full Lynis audit and narrate your Hardening Index, top 3 warnings, and 5 remediation steps you would take
+3. Demonstrate SSH hardening — show your `sshd_config` and explain each key setting
+4. SUID/SGID audit — show the command, output, and explain which binaries concern you and why
+5. Verbal explanation: What is the single most impactful Linux hardening step for reducing supply chain risk, and why?
 
 ---
 
-### Video Section 2 — Docker Security Mastery (25 points)
+### Video Section 2 — Docker Security Mastery
 
-1. **(5 pts)** Build your final project Docker image and show it running as a non-root user
-2. **(5 pts)** Walk through your Dockerfile line by line, explaining every security decision
-3. **(5 pts)** Generate and walk through the SBOM — total packages, what information it provides
-4. **(5 pts)** Run Grype or Trivy manually and walk through the findings
-5. **(5 pts)** Verbal explanation: Why is image digest pinning a supply chain security control, and what attack does it prevent?
-
----
-
-### Video Section 3 — GitHub CI/CD Pipeline Demonstration (30 points)
-
-1. **(10 pts)** Walk through your GitHub Actions pipeline YAML file — explain each job and why it exists
-2. **(10 pts)** Show the pipeline running in GitHub Actions — all jobs completing (or explain failures)
-3. **(5 pts)** Download and show the SBOM artifact from the pipeline run
-4. **(5 pts)** Show the Trivy vulnerability scan results artifact
+1. Build your final project Docker image and show it running as a non-root user
+2. Walk through your Dockerfile line by line, explaining every security decision
+3. Generate and walk through the SBOM — total packages, what information it provides
+4. Run Grype or Trivy manually and walk through the findings
+5. Verbal explanation: Why is image digest pinning a supply chain security control, and what attack does it prevent?
 
 ---
 
-### Video Section 4 — Course Reflection (20 points)
+### Video Section 3 — GitHub CI/CD Pipeline Demonstration
+
+1. Walk through your GitHub Actions pipeline YAML file — explain each job and why it exists
+2. Show the pipeline running in GitHub Actions — all jobs completing (or explain failures)
+3. Download and show the SBOM artifact from the pipeline run
+4. Show the Trivy vulnerability scan results artifact
+
+---
+
+### Video Section 4 — Course Reflection
 
 Deliver a 3–5 minute verbal reflection covering:
 
-1. **(5 pts)** What was the most impactful concept you learned in this course and why?
-2. **(5 pts)** How would you apply the security techniques from this course in a real-world job?
-3. **(5 pts)** What is the biggest challenge organizations face in implementing supply chain security, in your opinion?
-4. **(5 pts)** What would you do differently in your final project if you had more time?
+1. What was the most impactful concept you learned in this course and why?
+2. How would you apply the security techniques from this course in a real-world job?
+3. What is the biggest challenge organizations face in implementing supply chain security, in your opinion?
+4. What would you do differently in your final project if you had more time?
 
 > **⚠️ Critical:** Export your video in `.wmv` format. Incorrect formats cannot be graded.
 
@@ -288,44 +283,6 @@ Submit all of the following via Google Drive share link (see syllabus for submis
 | GitHub repository URL | URL (in Canvas submission comment) | ✅ Yes |
 | `SECURITY.md` (also in GitHub, copy submitted separately) | Markdown | ✅ Yes |
 | All screenshots referenced in video | `.png` or `.jpg` | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-### Part A — Written Exam (100 points)
-
-| Question | Points |
-|----------|--------|
-| Q1 — Supply chain security strategy essay | 15 |
-| Q2a/b — Short answers | 10 |
-| Q3 — Linux hardening runbook | 15 |
-| Q4a/b — Short answers | 10 |
-| Q5 — Advanced Docker hardening essay | 15 |
-| Q6a/b — Short answers | 10 |
-| Q7 — Full CI/CD pipeline design | 15 |
-| Q8a/b — Short answers | 10 |
-| **Total Part A** | **100** |
-
-### Part B — GitHub Project (100 points)
-
-| Section | Points |
-|---------|--------|
-| Repository setup and README | 10 |
-| Hardened Dockerfile with all required controls | 20 |
-| GitHub Actions pipeline (all 6 jobs) | 40 |
-| SECURITY.md (threat model + SBOM review + vuln review) | 30 |
-| **Total Part B** | **100** |
-
-### Part C — Video Demonstration (100 points)
-
-| Section | Points |
-|---------|--------|
-| Video Section 1 — Linux Security | 25 |
-| Video Section 2 — Docker Security | 25 |
-| Video Section 3 — CI/CD Pipeline | 30 |
-| Video Section 4 — Course Reflection | 20 |
-| **Total Part C** | **100** |
 
 ---
 

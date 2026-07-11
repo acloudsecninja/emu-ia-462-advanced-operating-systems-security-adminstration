@@ -41,7 +41,7 @@ lab4-cicd-security/
 
 ## 📝 Lab Instructions
 
-### Part 1 — Set Up Your Lab Repository (10 points)
+### Part 1 — Set Up Your Lab Repository
 
 #### 1a — Create the Repository
 
@@ -103,7 +103,7 @@ CMD ["python3", "app/app.py"]
 
 ---
 
-### Part 2 — Configure the GitHub Actions Security Pipeline (25 points)
+### Part 2 — Configure the GitHub Actions Security Pipeline
 
 Create `.github/workflows/security-pipeline.yml`:
 
@@ -242,7 +242,7 @@ git push origin main
 
 ---
 
-### Part 3 — Review Pipeline Results (15 points)
+### Part 3 — Review Pipeline Results
 
 #### 3a — Verify Pipeline Execution
 
@@ -274,7 +274,7 @@ In `lab4-analysis.txt`, answer:
 
 ---
 
-### Part 4 — Introduce and Fix a Vulnerability (15 points)
+### Part 4 — Introduce and Fix a Vulnerability
 
 #### 4a — Introduce a Known Vulnerable Dependency
 
@@ -312,7 +312,7 @@ git push origin main
 
 ---
 
-### Part 5 — Video Walkthrough (10 points)
+### Part 5 — Video Walkthrough
 
 Record a video demonstrating:
 
@@ -335,19 +335,6 @@ Record a video demonstrating:
 | GitHub repository URL | URL (in Canvas submission comment) | ✅ Yes |
 | `lab4-analysis.txt` | Plain text | ✅ Yes |
 | Screenshots | `.png` or `.jpg` | ✅ Yes |
-
----
-
-## 📊 Grading Rubric
-
-| Section | Points |
-|---------|--------|
-| Repository set up with app, Dockerfile, requirements.txt | 10 |
-| GitHub Actions pipeline configured with all 4 jobs | 25 |
-| Pipeline results reviewed and documented in analysis file | 15 |
-| Vulnerability introduced, pipeline failed, then fixed | 15 |
-| Video walkthrough | 10 |
-| **Total** | **75** |
 
 ---
 
