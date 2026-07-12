@@ -246,7 +246,50 @@ sudo lynis audit system 2>&1 | tee ~/lab2-lynis-report.txt
 
 ---
 
-### Part 6 — Video Walkthrough
+### Part 6 — Push Screenshots to Your Repository
+
+All screenshots taken during this lab must be committed and pushed to your repository. This validates that your Git workflow (add, commit, push) is functioning correctly.
+
+**Step 1 — Create a screenshots folder in your repo:**
+```bash
+mkdir -p Lab2/screenshots
+```
+
+**Step 2 — Move or copy your screenshots into the folder:**
+```bash
+# Copy all your lab screenshots into the folder
+# Adjust the source path to wherever you saved them
+cp ~/Desktop/screenshot-*.png Lab2/screenshots/
+```
+
+Name your files descriptively so they are easy to identify:
+- `01-uid0-accounts.png`
+- `02-user-creation-group.png`
+- `03-account-locked.png`
+- `04-world-writable-files.png`
+- `05-suid-binaries.png`
+- `06-service-disabled.png`
+- `07-ssh-hardening.png`
+- `08-lynis-results.png`
+
+**Step 3 — Stage, commit, and push the screenshots:**
+```bash
+git add Lab2/screenshots/
+git status
+git commit -m "Add Lab2 screenshots"
+git push origin main
+```
+
+**Step 4 — Verify the push on GitHub:**
+1. Navigate to your repository on GitHub.com
+2. Confirm the `Lab2/screenshots/` folder is visible and contains all your images
+3. **Screenshot:** Take a final screenshot showing the screenshots folder on GitHub
+
+> **✅ Validation Check:** If you can see your screenshot files in the `Lab2/screenshots/` folder on GitHub.com, your Git push workflow is confirmed working.
+
+---
+
+### Part 7 — Video Walkthrough
 
 Using your screen recording software, record a video demonstrating:
 
@@ -255,7 +298,8 @@ Using your screen recording software, record a video demonstrating:
 3. A disabled service showing `inactive` status
 4. The SSH config changes
 5. Lynis scan results with your Hardening Index score
-6. A brief verbal explanation of **one hardening technique** you found most impactful
+6. The `Lab2/screenshots/` folder pushed to GitHub with all images visible
+7. A brief verbal explanation of **one hardening technique** you found most impactful
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 

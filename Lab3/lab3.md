@@ -242,7 +242,49 @@ Take screenshots showing:
 
 ---
 
-### Part 5 — Video Walkthrough
+### Part 5 — Push Screenshots to Your Repository
+
+All screenshots taken during this lab must be committed and pushed to your repository. This validates that your Git workflow (add, commit, push) is functioning correctly.
+
+**Step 1 — Create a screenshots folder in your repo:**
+```bash
+mkdir -p Lab3/screenshots
+```
+
+**Step 2 — Move or copy your screenshots into the folder:**
+```bash
+# Copy all your lab screenshots into the folder
+# Adjust the source path to wherever you saved them
+cp ~/Desktop/screenshot-*.png Lab3/screenshots/
+```
+
+Name your files descriptively so they are easy to identify:
+- `01-docker-hello-world.png`
+- `02-docker-build-success.png`
+- `03-container-nonroot-user.png`
+- `04-sbom-table-output.png`
+- `05-sbom-json-header.png`
+- `06-vuln-scan-results.png`
+- `07-nvd-cve-lookup.png`
+
+**Step 3 — Stage, commit, and push the screenshots:**
+```bash
+git add Lab3/screenshots/
+git status
+git commit -m "Add Lab3 screenshots"
+git push origin main
+```
+
+**Step 4 — Verify the push on GitHub:**
+1. Navigate to your repository on GitHub.com
+2. Confirm the `Lab3/screenshots/` folder is visible and contains all your images
+3. **Screenshot:** Take a final screenshot showing the screenshots folder on GitHub
+
+> **✅ Validation Check:** If you can see your screenshot files in the `Lab3/screenshots/` folder on GitHub.com, your Git push workflow is confirmed working.
+
+---
+
+### Part 6 — Video Walkthrough
 
 Record a video demonstrating:
 
@@ -251,6 +293,7 @@ Record a video demonstrating:
 3. SBOM generation output
 4. Vulnerability scan results
 5. Looking up a CVE on the NVD website
+6. The `Lab3/screenshots/` folder pushed to GitHub with all images visible
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 

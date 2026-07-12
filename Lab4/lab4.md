@@ -312,7 +312,49 @@ git push origin main
 
 ---
 
-### Part 5 — Video Walkthrough
+### Part 5 — Push Screenshots to Your Repository
+
+All screenshots taken during this lab must be committed and pushed to your repository. This validates that your Git workflow (add, commit, push) is functioning correctly.
+
+**Step 1 — Create a screenshots folder in your repo:**
+```bash
+mkdir -p Lab4/screenshots
+```
+
+**Step 2 — Move or copy your screenshots into the folder:**
+```bash
+# Copy all your lab screenshots into the folder
+# Adjust the source path to wherever you saved them
+cp ~/Desktop/screenshot-*.png Lab4/screenshots/
+```
+
+Name your files descriptively so they are easy to identify:
+- `01-local-directory-structure.png`
+- `02-pipeline-running.png`
+- `03-pipeline-completed.png`
+- `04-trivy-scan-results.png`
+- `05-sbom-json-contents.png`
+- `06-pipeline-failed-vuln.png`
+- `07-pipeline-passed-fix.png`
+
+**Step 3 — Stage, commit, and push the screenshots:**
+```bash
+git add Lab4/screenshots/
+git status
+git commit -m "Add Lab4 screenshots"
+git push origin main
+```
+
+**Step 4 — Verify the push on GitHub:**
+1. Navigate to your repository on GitHub.com
+2. Confirm the `Lab4/screenshots/` folder is visible and contains all your images
+3. **Screenshot:** Take a final screenshot showing the screenshots folder on GitHub
+
+> **✅ Validation Check:** If you can see your screenshot files in the `Lab4/screenshots/` folder on GitHub.com, your Git push workflow is confirmed working.
+
+---
+
+### Part 6 — Video Walkthrough
 
 Record a video demonstrating:
 
@@ -321,7 +363,8 @@ Record a video demonstrating:
 3. The Trivy vulnerability scan results
 4. The SBOM artifact download and preview
 5. The "introduce vulnerability → pipeline fails → fix → pipeline passes" cycle
-6. A brief verbal explanation of **why automated security gates in CI/CD are important**
+6. The `Lab4/screenshots/` folder pushed to GitHub with all images visible
+7. A brief verbal explanation of **why automated security gates in CI/CD are important**
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 

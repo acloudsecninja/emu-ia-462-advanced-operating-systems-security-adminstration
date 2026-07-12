@@ -234,7 +234,48 @@ Perform the following hands-on tasks in your GitHub repository:
    ```
 5. Verify the `SECURITY.md` appears on your repository's **Security** tab on GitHub.com — screenshot
 
-### Part 6 — Record Your Video Walkthrough
+### Part 6 — Push Screenshots to Your Repository
+
+All screenshots taken during this lab must be committed and pushed to your repository. This validates that your Git workflow (add, commit, push) is functioning correctly.
+
+**Step 1 — Create a screenshots folder in your repo:**
+```bash
+mkdir -p Lab1/screenshots
+```
+
+**Step 2 — Move or copy your screenshots into the folder:**
+```bash
+# Copy all your lab screenshots into the folder
+# Adjust the source path to wherever you saved them
+cp ~/Desktop/screenshot-*.png Lab1/screenshots/
+```
+
+Name your files descriptively so they are easy to identify:
+- `01-github-profile.png`
+- `02-git-config-list.png`
+- `03-clone-directory-listing.png`
+- `04-git-log.png`
+- `05-security-tab.png`
+- `06-security-md-pushed.png`
+
+**Step 3 — Stage, commit, and push the screenshots:**
+```bash
+git add Lab1/screenshots/
+git status
+git commit -m "Add Lab1 screenshots"
+git push origin main
+```
+
+**Step 4 — Verify the push on GitHub:**
+1. Navigate to your repository on GitHub.com
+2. Confirm the `Lab1/screenshots/` folder is visible and contains all your images
+3. **Screenshot:** Take a final screenshot showing the screenshots folder on GitHub
+
+> **✅ Validation Check:** If you can see your screenshot files in the `Lab1/screenshots/` folder on GitHub.com, your Git push workflow is confirmed working.
+
+---
+
+### Part 7 — Record Your Video Walkthrough
 
 Using your screen recording software, record a video demonstrating:
 
@@ -243,6 +284,7 @@ Using your screen recording software, record a video demonstrating:
 3. The cloned repository directory and file listing
 4. A walkthrough of the repository structure
 5. The Security tab and SECURITY.md file on GitHub
+6. The `Lab1/screenshots/` folder pushed to GitHub with all images visible
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 
