@@ -22,17 +22,132 @@ Before starting this lab, ensure you have:
 
 ## 🛠️ Lab Environment Setup
 
-### Step 1 — Install Git
+### Step 1 — Install Git for Windows
 
-**Windows:**
-1. Download Git for Windows from https://git-scm.com/download/win
-2. Run the installer with default settings
-3. Open **Git Bash** and verify the installation:
-   ```bash
-   git --version
-   ```
+#### 1A — Download Git for Windows
 
-**Linux (Ubuntu):**
+1. Open your web browser and navigate to: https://git-scm.com/download/win
+2. The download should start automatically for the latest 64-bit version. If not, click the **"64-bit Git for Windows Setup"** link.
+3. Save the installer (e.g., `Git-2.x.x-64-bit.exe`) to your Downloads folder.
+
+#### 1B — Run the Git for Windows Installer
+
+1. Double-click the downloaded `.exe` file to launch the installer.
+2. Walk through the installer with the following recommended settings:
+   - **Select Components:** Leave defaults checked (Windows Explorer integration, Git Bash Here, Git LFS)
+   - **Default Editor:** Select your preferred editor (Nano or Notepad++ recommended for beginners)
+   - **Adjusting PATH:** Select **"Git from the command line and also from 3rd-party software"** (recommended)
+   - **SSH executable:** Select **"Use bundled OpenSSH"**
+   - **HTTPS transport backend:** Select **"Use the OpenSSL library"**
+   - **Line ending conversions:** Select **"Checkout Windows-style, commit Unix-style line endings"**
+   - **Terminal emulator:** Select **"Use MinTTY"** (the default terminal of MSYS2)
+   - **Default branch name:** Select **"Override the default branch name"** and enter `main`
+   - **Extra options:** Leave defaults (Enable file system caching, Enable Git Credential Manager)
+3. Click **Install** and wait for the installation to complete.
+4. Click **Finish** (optionally check "Launch Git Bash").
+
+#### 1C — Validate Git Installation on Windows
+
+Open **Git Bash** (right-click desktop → "Git Bash Here", or search "Git Bash" in Start Menu):
+
+```bash
+# Check that git is installed and display the version
+git --version
+```
+
+Expected output (version may vary):
+```
+git version 2.45.0.windows.1
+```
+
+Also verify Git is accessible from **Windows PowerShell**:
+```powershell
+# Open PowerShell (Win + X → Windows PowerShell) and run:
+git --version
+```
+
+And from **Windows Command Prompt (cmd.exe)**:
+```cmd
+# Open CMD (Win + R → type cmd → Enter) and run:
+git --version
+```
+
+> **✅ Validation Check:** If all three shells (Git Bash, PowerShell, CMD) return a version number, Git for Windows is installed correctly.
+
+If `git` is not recognized in PowerShell or CMD, the PATH was not set correctly during installation. Reinstall Git and select **"Git from the command line and also from 3rd-party software"** at the PATH step.
+
+#### 1D — Validate Git Works with WSL (Windows Subsystem for Linux)
+
+If you are using WSL (Windows Subsystem for Linux), Git must also be installed **inside** the WSL environment separately — the Windows Git installation does not carry over into WSL.
+
+**Step 1 — Open your WSL terminal:**
+```powershell
+# From PowerShell or CMD, launch your WSL distro:
+wsl
+```
+Or search for **"Ubuntu"** (or your installed distro) in the Start Menu.
+
+**Step 2 — Install Git inside WSL:**
+```bash
+sudo apt update && sudo apt install git -y
+```
+
+**Step 3 — Verify Git version inside WSL:**
+```bash
+git --version
+```
+
+Expected output:
+```
+git version 2.43.0
+```
+
+**Step 4 — Configure Git identity inside WSL:**
+```bash
+git config --global user.name "Your Full Name"
+git config --global user.email "yourname@emich.edu"
+```
+
+**Step 5 — Validate the full Git workflow inside WSL:**
+```bash
+# Create a test directory
+mkdir ~/git-test && cd ~/git-test
+
+# Initialize a new Git repository
+git init
+
+# Create a test file
+echo "Hello from WSL" > test.txt
+
+# Stage the file
+git add test.txt
+
+# Commit the file
+git commit -m "Test commit from WSL"
+
+# View the commit log
+git log --oneline
+
+# Clean up the test directory
+cd ~ && rm -rf ~/git-test
+```
+
+> **✅ Validation Check:** If `git log --oneline` shows your test commit, Git is fully functional inside WSL.
+
+**Step 6 — (Optional) Configure WSL to use Windows Git Credential Manager:**
+
+This allows WSL to share credentials with Windows so you don't have to authenticate twice:
+```bash
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+```
+
+> **⚠️ Note:** The path above assumes Git for Windows was installed to the default location (`C:\Program Files\Git`). Adjust if your installation path differs.
+
+---
+
+### Step 1 (Alternative) — Install Git on Linux or macOS
+
+**Linux (Ubuntu — standalone, not WSL):**
 ```bash
 sudo apt update && sudo apt install git -y
 git --version
