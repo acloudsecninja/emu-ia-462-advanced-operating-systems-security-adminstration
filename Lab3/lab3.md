@@ -84,7 +84,7 @@ Save this as `Dockerfile.insecure` and review it:
 nano Dockerfile.insecure
 ```
 
-Identify at least **3 security issues** with this Dockerfile and document them in `lab3-findings.txt`.
+In your video, verbally identify at least **3 security issues** with this Dockerfile as you review it on screen.
 
 #### 1b — Build a Hardened Dockerfile
 
@@ -142,11 +142,11 @@ docker build -t lab3-secure:v1 .
 
 **Screenshot:** Capture the successful build output.
 
-#### 1c — Document the Hardening Decisions
+#### 1c — Walk Through the Hardening Decisions
 
-In `lab3-findings.txt`, document:
+In your video, narrate:
 1. What was insecure in `Dockerfile.insecure`
-2. What changes you made in the hardened Dockerfile and **why** each change improves security
+2. Walk through each line of the hardened Dockerfile explaining **why** each change improves security
 
 ---
 
@@ -206,10 +206,10 @@ Open the JSON file and review:
 cat lab3-sbom.json | python3 -m json.tool | head -60
 ```
 
-In `lab3-findings.txt`, answer:
-1. How many packages are listed in your container's SBOM?
-2. Why is having an SBOM important for supply chain security?
-3. How would you use an SBOM in a CI/CD pipeline?
+Take screenshots showing:
+1. The JSON output header and first few packages
+2. The total package count (use `cat lab3-sbom.json | python3 -c "import sys,json; d=json.load(sys.stdin); print(len(d.get('artifacts',d.get('packages',[]))))"`)
+3. Narrate in your video what the SBOM contains
 
 ---
 
@@ -232,13 +232,13 @@ grype lab3-secure:v1 --output table 2>&1 | tee lab3-vuln-scan.txt
 
 #### 4c — Review and Remediate
 
-Review the scan results:
-- How many vulnerabilities are **Critical**? **High**? **Medium**?
-- Identify one vulnerability and research it on https://nvd.nist.gov
+Review the scan results in your terminal:
+- Note the severity breakdown: **Critical**, **High**, **Medium**, **Low**
+- Pick one CVE from the output and look it up on https://nvd.nist.gov in your browser
 
-In `lab3-findings.txt`, document:
-1. Total vulnerability counts by severity
-2. One CVE from the scan — what is it, what does it affect, and what is the remediation?
+Take screenshots showing:
+1. The full Grype scan output with severity counts
+2. The NVD page for the CVE you looked up
 
 ---
 
@@ -250,7 +250,7 @@ Record a video demonstrating:
 2. The container running as a non-root user
 3. SBOM generation output
 4. Vulnerability scan results
-5. A brief verbal explanation of **why SBOM and vulnerability scanning matter** for supply chain security
+5. Looking up a CVE on the NVD website
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 
@@ -265,7 +265,7 @@ Record a video demonstrating:
 | `Dockerfile.insecure` (baseline) | Text file | ✅ Yes |
 | `lab3-sbom.json` | JSON | ✅ Yes |
 | `lab3-vuln-scan.txt` | Plain text | ✅ Yes |
-| `lab3-findings.txt` | Plain text | ✅ Yes |
+| Screenshots (all parts) | `.png` or `.jpg` | ✅ Yes |
 
 ---
 

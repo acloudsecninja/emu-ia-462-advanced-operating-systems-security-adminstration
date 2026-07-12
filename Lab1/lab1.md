@@ -101,14 +101,23 @@ git config --list
 
 **Screenshot:** Take a screenshot of the `git log` output.
 
-### Part 5 — Supply Chain Security Awareness
+### Part 5 — Explore Repository Security Features
 
-Answer the following questions in a text file named `lab1-answers.txt` that you will submit along with your video:
+Perform the following hands-on tasks in your GitHub repository:
 
-1. **What is a software supply chain attack?** Provide a definition in your own words (2–3 sentences).
-2. **Name one real-world supply chain attack** that occurred in the last 5 years. Briefly describe what happened and the impact.
-3. **Why is source control (like GitHub) important** in defending against supply chain attacks?
-4. **What is dependency pinning?** Why is it considered a supply chain security best practice?
+1. Navigate to the **Security** tab of your repository on GitHub.com — take a screenshot
+2. Click on **Dependabot alerts** (if available) — screenshot the page
+3. Go to **Settings → Code security and analysis** — screenshot the available options
+4. Create a file named `SECURITY.md` in your repository with placeholder text:
+   ```bash
+   echo "# Security Policy" > SECURITY.md
+   echo "## Reporting a Vulnerability" >> SECURITY.md
+   echo "Please report security issues to the course instructor." >> SECURITY.md
+   git add SECURITY.md
+   git commit -m "Add security policy"
+   git push origin main
+   ```
+5. Verify the `SECURITY.md` appears on your repository's **Security** tab on GitHub.com — screenshot
 
 ### Part 6 — Record Your Video Walkthrough
 
@@ -118,7 +127,7 @@ Using your screen recording software, record a video demonstrating:
 2. Your local Git configuration (`git config --list`)
 3. The cloned repository directory and file listing
 4. A walkthrough of the repository structure
-5. A brief verbal explanation of one supply chain security concept you learned
+5. The Security tab and SECURITY.md file on GitHub
 
 > **⚠️ Critical:** Export your video in `.wmv` format before uploading to Canvas.
 
@@ -131,8 +140,7 @@ Submit the following to Canvas by the due date:
 | Item | Format | Required |
 |------|--------|----------|
 | Video walkthrough | `.wmv` | ✅ Yes |
-| `lab1-answers.txt` | Plain text | ✅ Yes |
-| Screenshots (embedded in answers or separate) | `.png` or `.jpg` | ✅ Yes |
+| Screenshots (all parts) | `.png` or `.jpg` | ✅ Yes |
 
 ---
 

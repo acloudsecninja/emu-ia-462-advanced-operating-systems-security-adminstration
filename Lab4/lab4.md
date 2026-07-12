@@ -257,20 +257,20 @@ git push origin main
 1. Download the `trivy-results` artifact from the pipeline run
 2. Open the file and review the findings
 
-In `lab4-analysis.txt`, answer:
-1. Did any CRITICAL or HIGH vulnerabilities block the pipeline? Which ones?
-2. What package/library is affected and what is the CVE?
-3. How would you remediate the most critical finding?
+Take screenshots showing:
+1. The vulnerability scan results from the pipeline artifact
+2. Any CRITICAL or HIGH findings that blocked (or would block) the pipeline
+3. The specific CVE identifier for the most critical finding
 
 #### 3c — Review the SBOM
 
 1. Download the `sbom` artifact
 2. Open `sbom.spdx.json` and review the package inventory
 
-In `lab4-analysis.txt`, answer:
-1. How many packages are listed in the SBOM?
-2. What SPDX version is used?
-3. How does an SBOM help with supply chain security in a CI/CD pipeline?
+Take screenshots showing:
+1. The SBOM JSON file contents (first page of output)
+2. The total package count from the SBOM
+3. The SPDX version listed in the file header
 
 ---
 
@@ -333,8 +333,7 @@ Record a video demonstrating:
 |------|--------|----------|
 | Video walkthrough | `.wmv` | ✅ Yes |
 | GitHub repository URL | URL (in Canvas submission comment) | ✅ Yes |
-| `lab4-analysis.txt` | Plain text | ✅ Yes |
-| Screenshots | `.png` or `.jpg` | ✅ Yes |
+| Screenshots (all parts) | `.png` or `.jpg` | ✅ Yes |
 
 ---
 

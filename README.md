@@ -1,4 +1,3 @@
-
 # IA 462 — Advanced Operating Systems Security & Administration
 
 **Eastern Michigan University | Fall 2026 | Instructor: Ryan Weber, MSIA**
